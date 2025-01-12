@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>Skills - Sebastian Portfolio</title>
+    <style>
+        .skill-category {
+            cursor: pointer; /* Change cursor to pointer */
+        }
+        .highlight {
+            background-color: lightyellow; /* Highlight color */
+        }
+        .skill-description {
+            display: none; /* Initially hidden */
+            margin-top: 10px; /* Space above description */
+            font-style: italic; /* Italic style for description */
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Sebastian</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="about.html">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="skills.html">Skills</a></div>
+                <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="contact.html">Contact Us</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="skills.html">Skills</a>
+                <a href="contact.html">Contact Us</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+    <section id="skills">
+        <div class="skills-container">
+            <h2 data-aos="fade-up" data-aos-duration="1000">My Skills</h2>
+            <div class="skill-category" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100" onclick="toggleDescription(this, 'designDescription')">
+                <h3>Design Skills</h3>
+                <div id="designDescription" class="skill-description">Expertise in creating user-centric designs using tools like Figma, Adobe XD, or Sketch.</div>
+                <ul>
+                    <li>Wireframing & Prototyping</li>
+                    <li>User Research & Testing</li>
+                    <li>UI/UX Design</li>
+                    <li>Graphic Design</li>
+                    <li>Responsive Design</li>
+                </ul>
+            </div>
+            <div class="skill-category" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300" onclick="toggleDescription(this, 'photographyDescription')">
+                <h3>Photography Skills</h3>
+                <div id="photographyDescription" class="skill-description">Capturing expressive and impactful portraits and documenting events with a keen eye for detail.</div>
+                <ul>
+                    <li>Portrait Photography</li>
+                    <li>Event Photography</li>
+                    <li>Photo Editing</li>
+                    <li>Photojournalism</li>
+                </ul>
+            </div>
+            <div class="skill-category" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500" onclick="toggleDescription(this, 'technicalDescription')">
+                <h3>Technical Skills</h3>
+                <div id="technicalDescription" class="skill-description">Knowledge of HTML, CSS, and JavaScript to collaborate effectively with developers.</div>
+                <ul>
+                    <li>Design Tools: Figma, Adobe XD, Photoshop, Illustrator, Lightroom.</li>
+                    <li>Web Development Basics</li>
+                    <li>Content Management</li>
+                    <li>Database Knowledge</li>
+                </ul>
+            </div>
+            <div class="skill-category" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700" onclick="toggleDescription(this, 'softSkillsDescription')">
+                <h3>Soft Skills</h3>
+                <div id="softSkillsDescription" class="skill-description">Experience working with cross-functional teams, including developers, marketers, and writers.</div>
+                <ul>
+                    <li>Collaboration</li>
+                    <li>Communication</li>
+                    <li>Problem-Solving</li>
+                    <li>Time Management</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+
+        function toggleDescription(element, descriptionId) {
+            const description = document.getElementById(descriptionId);
+            const isVisible = description.style.display === 'block';
+            const skillCategories = document.querySelectorAll('.skill-category');
+
+            skillCategories.forEach(cat => {
+                cat.classList.remove('highlight');
+                cat.querySelector('.skill-description').style.display = 'none';
+            });
+
+            if (!isVisible) {
+                element.classList.add('highlight');
+                description.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
