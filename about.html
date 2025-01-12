@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <title>About - Sebastian Portfolio</title>
+</head>
+<body>
+    <nav>
+        <div class="nav-container">
+            <div class="logo" data-aos="zoom-in" data-aos-duration="1000">
+                <span>Sebastian</span>
+            </div>
+            <div class="links">
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100"><a href="index.html">Home</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200"><a href="about.html">About</a></div>
+                <div class="link" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300"><a href="skills.html">Skills</a></div>
+                <div class="link contact-btn" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400"><a href="contact.html">Contact Us</a></div>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+        <div class="dropdown">
+            <div class="links">
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="skills.html">Skills</a>
+                <a href="contact.html">Contact Us</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+    <section id="about">
+        <div class="about-container">
+            <h2 data-aos="fade-up" data-aos-duration="1000">Hi! I'm Sebastian</h2>
+            <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                I'm a passionate UI/UX Designer currently studying at Southwestern University - PHINMA. I specialize in creating user-friendly digital experiences that combine functionality with aesthetic appeal.
+            </p>
+            <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                Beyond design, I am a freelance photographer who loves capturing moments that tell stories. As a photojournalist for The Quill, I have honed my ability to convey powerful narratives through imagery and words.
+            </p>
+            <p data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                My diverse experiences in design and photography allow me to bring a unique perspective to every project I undertake. Let's create something amazing together!
+            </p>
+            <!-- Additional Features -->
+            <div id="moreInfo" style="display: none;">
+                <p>Here is some more information about my background, experiences, and interests...</p>
+            </div>
+            <button id="showMoreBtn">Show More</button>
+        </div>
+    </section>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init({offset: 0});
+
+        // Feature 1: Show More Button
+        document.getElementById('showMoreBtn').addEventListener('click', function() {
+            const moreInfo = document.getElementById('moreInfo');
+            if (moreInfo.style.display === 'none') {
+                moreInfo.style.display = 'block';
+                this.innerHTML = 'Show Less';
+            } else {
+                moreInfo.style.display = 'none';
+                this.innerHTML = 'Show More';
+            }
+        });
+    </script>
+    <script>
+        function hamburg(){
+            const navbar = document.querySelector(".dropdown");
+            navbar.style.transform = "translateY(0px)";
+        }
+        function cancel(){
+            const navbar = document.querySelector(".dropdown");
+            navbar.style.transform = "translateY(-500px)";
+        }
+    </script>
+</body>
+</html>
